@@ -1,0 +1,2212 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KesintisizGuc.com — Endüstriyel Güç Sürekliliği ve Enerji Verimliliği Portalı</title>
+<meta name="description" content="Veri merkezlerinden fabrikalara, asansör sistemlerinden gaming ekosistemlerine — mühendislik temelli kesintisiz güç çözümleri. Tunçmatik ve Schneider Electric yetkili satış ve proje danışmanlığı.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #F4F2EE;
+  --bg2: #ECEAE4;
+  --bg3: #E2DED6;
+  --surface: #FFFFFF;
+  --surface2: #F9F8F5;
+  --border: #D8D4CB;
+  --border2: #C8C2B6;
+  --text: #1A1714;
+  --text2: #3D3830;
+  --text3: #6B6358;
+  --text4: #9A9288;
+  --accent: #D4440C;
+  --accent2: #E8551A;
+  --accent-light: #FBF0EB;
+  --accent3: #1B4F8A;
+  --accent3-light: #EBF1F9;
+  --green: #1A6B3A;
+  --green-light: #EBF5EF;
+  --gold: #B8860B;
+  --gold-light: #FBF6E7;
+  --shadow-sm: 0 1px 3px rgba(26,23,20,0.08);
+  --shadow: 0 4px 16px rgba(26,23,20,0.10);
+  --shadow-lg: 0 12px 40px rgba(26,23,20,0.12);
+  --radius: 10px;
+  --radius-lg: 16px;
+  --transition: 0.22s cubic-bezier(0.4,0,0.2,1);
+}
+
+[data-theme="dark"] {
+  --bg: #111110;
+  --bg2: #181715;
+  --bg3: #201F1C;
+  --surface: #242220;
+  --surface2: #2C2A27;
+  --border: #38352F;
+  --border2: #48443C;
+  --text: #F0EDE8;
+  --text2: #D4CFC7;
+  --text3: #9A9288;
+  --text4: #6B6358;
+  --accent: #E8551A;
+  --accent2: #F06830;
+  --accent-light: #2A1810;
+  --accent3: #3A7EC8;
+  --accent3-light: #0F2035;
+  --green: #2A9055;
+  --green-light: #0D2318;
+  --gold: #D4A020;
+  --gold-light: #2A2008;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow: 0 4px 16px rgba(0,0,0,0.4);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.5);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.65;
+  transition: background var(--transition), color var(--transition);
+  overflow-x: hidden;
+}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+
+/* ─── TOPBAR ─── */
+.topbar {
+  background: var(--text);
+  color: var(--bg);
+  font-size: 12.5px;
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 0.02em;
+  padding: 7px 0;
+  position: relative;
+  z-index: 100;
+}
+.topbar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.topbar-links { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
+.topbar a {
+  color: rgba(244,242,238,0.72);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.topbar a:hover { color: var(--bg); }
+.topbar-accent { color: var(--accent2) !important; font-weight: 500; }
+
+/* ─── HEADER / NAV ─── */
+header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  transition: background var(--transition), box-shadow var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+nav {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.logo-icon {
+  width: 38px;
+  height: 38px;
+  background: var(--accent);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
+}
+.logo-icon svg { width: 22px; height: 22px; }
+.logo-text {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--text);
+  line-height: 1.1;
+}
+.logo-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--text3);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: block;
+}
+.nav-links {
+  display: flex;
+  gap: 2px;
+  list-style: none;
+  flex: 1;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+.nav-links a:hover { background: var(--bg2); color: var(--text); }
+.nav-links a.active { color: var(--accent); background: var(--accent-light); }
+.nav-right { display: flex; align-items: center; gap: 10px; margin-left: auto; }
+
+/* DARK TOGGLE */
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+  color: var(--text3);
+}
+.theme-toggle:hover { border-color: var(--border2); color: var(--text); background: var(--bg3); }
+.icon-sun, .icon-moon { width: 18px; height: 18px; }
+[data-theme="light"] .icon-moon { display: none; }
+[data-theme="dark"] .icon-sun { display: none; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 18px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition);
+  border: none;
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-primary:hover { background: var(--accent2); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(212,68,12,0.35); }
+.btn-outline {
+  background: transparent;
+  color: var(--text2);
+  border: 1px solid var(--border2);
+}
+.btn-outline:hover { background: var(--bg2); color: var(--text); border-color: var(--border2); }
+.btn-blue {
+  background: var(--accent3);
+  color: #fff;
+}
+.btn-blue:hover { opacity: 0.9; transform: translateY(-1px); box-shadow: 0 4px 14px rgba(27,79,138,0.35); }
+
+/* ─── MAIN WRAPPER ─── */
+main { min-height: 100vh; }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+
+/* ─── HERO ─── */
+.hero {
+  background: var(--surface);
+  padding: 80px 0 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+.hero-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.35;
+  pointer-events: none;
+}
+.hero-glow {
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(212,68,12,0.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 60px;
+  align-items: center;
+  padding-bottom: 60px;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent-light);
+  border: 1px solid rgba(212,68,12,0.2);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 100px;
+  margin-bottom: 24px;
+}
+.hero-badge span { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: pulse-dot 2s ease-in-out infinite; }
+@keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+
+.hero h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 800;
+  line-height: 1.12;
+  color: var(--text);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+.hero h1 em { color: var(--accent); font-style: normal; }
+.hero h2 {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text3);
+  line-height: 1.7;
+  margin-bottom: 28px;
+  max-width: 580px;
+}
+.hero-p {
+  font-size: 15.5px;
+  color: var(--text2);
+  line-height: 1.75;
+  margin-bottom: 36px;
+  max-width: 560px;
+}
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 48px; }
+
+.hero-stats {
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg2);
+  max-width: 520px;
+}
+.hero-stat {
+  flex: 1;
+  padding: 16px 20px;
+  text-align: center;
+  border-right: 1px solid var(--border);
+}
+.hero-stat:last-child { border-right: none; }
+.hero-stat-val {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--accent);
+  display: block;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.hero-stat-label {
+  font-size: 11px;
+  color: var(--text3);
+  font-family: 'DM Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Hero RIGHT panel */
+.hero-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  position: relative;
+}
+.hero-card-header {
+  background: linear-gradient(135deg, var(--text) 0%, #2C2926 100%);
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero-card-dot { width: 10px; height: 10px; border-radius: 50%; }
+.hero-card-body { padding: 20px 24px; }
+.cta-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: all var(--transition);
+  border-radius: 8px;
+  margin: 0 -8px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.cta-item:last-of-type { border-bottom: none; }
+.cta-item:hover { background: var(--bg2); }
+.cta-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 18px;
+}
+.cta-text-title { font-size: 13.5px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+.cta-text-sub { font-size: 12px; color: var(--text3); }
+.cta-arrow { margin-left: auto; color: var(--text4); font-size: 18px; flex-shrink: 0; align-self: center; }
+
+/* ─── HERO BOTTOM RIBBON ─── */
+.hero-ribbon {
+  border-top: 1px solid var(--border);
+  background: var(--bg2);
+  padding: 16px 0;
+  margin-top: 0;
+}
+.hero-ribbon-inner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.hero-ribbon-inner::-webkit-scrollbar { display: none; }
+.ribbon-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  font-size: 13px;
+  color: var(--text3);
+}
+.ribbon-item strong { color: var(--text2); font-weight: 500; }
+.ribbon-dot { width: 4px; height: 4px; background: var(--border2); border-radius: 50%; flex-shrink: 0; }
+
+/* ─── SECTIONS COMMON ─── */
+section { padding: 72px 0; }
+.section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: block;
+}
+.section-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+.section-sub {
+  font-size: 15.5px;
+  color: var(--text3);
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+/* ─── SECTORS ─── */
+.sectors { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.sectors-header { text-align: center; margin-bottom: 48px; }
+.sectors-header .section-sub { margin: 0 auto; }
+.sectors-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.sector-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  transition: all var(--transition);
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+.sector-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--card-accent, var(--accent));
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.sector-card:hover { border-color: var(--border2); box-shadow: var(--shadow); transform: translateY(-2px); }
+.sector-card:hover::before { opacity: 1; }
+.sector-icon {
+  font-size: 28px;
+  margin-bottom: 14px;
+  display: block;
+  filter: grayscale(0);
+}
+.sector-title { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+.sector-desc { font-size: 13px; color: var(--text3); line-height: 1.6; margin-bottom: 14px; }
+.sector-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-family: 'DM Mono', monospace;
+  font-weight: 500;
+  padding: 3px 9px;
+  border-radius: 100px;
+  background: var(--tag-bg, var(--accent-light));
+  color: var(--tag-color, var(--accent));
+}
+
+/* ─── ENERGY EFFICIENCY ─── */
+.efficiency { background: var(--surface); }
+.eff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.eff-calc {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+}
+.eff-calc-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.eff-calc-sub { font-size: 13px; color: var(--text3); margin-bottom: 24px; }
+
+.calc-slider-group { margin-bottom: 20px; }
+.calc-label { display: flex; justify-content: space-between; font-size: 13px; color: var(--text2); margin-bottom: 8px; font-weight: 500; }
+.calc-val { font-family: 'DM Mono', monospace; color: var(--accent); font-weight: 600; }
+input[type="range"] {
+  width: 100%;
+  height: 4px;
+  appearance: none;
+  background: var(--border2);
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 2px 8px rgba(212,68,12,0.35);
+  cursor: pointer;
+}
+
+.calc-result {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin-top: 20px;
+}
+.calc-result-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13.5px; }
+.calc-result-row:last-child { border-bottom: none; }
+.calc-result-row span:first-child { color: var(--text3); }
+.calc-result-row span:last-child { font-family: 'DM Mono', monospace; font-weight: 600; color: var(--text); }
+.calc-result-row.highlight span:last-child { color: var(--green); font-size: 15px; }
+
+.eff-table-wrap { overflow-x: auto; }
+.eff-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+.eff-table th {
+  text-align: left;
+  padding: 10px 14px;
+  font-size: 11px;
+  font-family: 'DM Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text3);
+  border-bottom: 2px solid var(--border);
+  background: var(--bg2);
+}
+.eff-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text2);
+  vertical-align: middle;
+}
+.eff-table tr:last-child td { border-bottom: none; }
+.eff-table tr:hover td { background: var(--bg2); }
+.eff-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 100px;
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+/* ─── PRODUCTS ─── */
+.products { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.products-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 40px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 4px;
+  width: fit-content;
+}
+.tab-btn {
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: var(--text3);
+  transition: all var(--transition);
+}
+.tab-btn.active { background: var(--surface); color: var(--text); box-shadow: var(--shadow-sm); }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+.product-brand-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  padding: 20px 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+.brand-badge {
+  padding: 6px 16px;
+  border-radius: 8px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 17px;
+}
+.brand-desc { font-size: 13.5px; color: var(--text3); line-height: 1.5; }
+
+.product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.product-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.product-card:hover { border-color: var(--border2); box-shadow: var(--shadow); transform: translateY(-2px); }
+.product-card.featured {
+  border-color: var(--accent);
+  background: linear-gradient(160deg, var(--accent-light) 0%, var(--surface) 60%);
+}
+.product-featured-tag {
+  position: absolute;
+  top: 14px; right: 14px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 100px;
+}
+.product-series {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.product-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.2;
+}
+.product-range {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  font-family: 'DM Mono', monospace;
+}
+.product-desc { font-size: 13px; color: var(--text3); line-height: 1.6; }
+.product-specs {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.product-specs li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--text2);
+}
+.product-specs li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+.product-cta {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 4px;
+}
+.product-cta a {
+  flex: 1;
+  text-align: center;
+  padding: 9px 12px;
+  border-radius: 7px;
+  font-size: 12.5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition);
+}
+.product-cta a.primary { background: var(--accent); color: #fff; }
+.product-cta a.primary:hover { background: var(--accent2); }
+.product-cta a.secondary { background: var(--bg2); color: var(--text2); border: 1px solid var(--border2); }
+.product-cta a.secondary:hover { background: var(--bg3); }
+
+/* ─── PILLAR ARTICLE PREVIEW ─── */
+.pillar { background: var(--surface); }
+.pillar-grid { display: grid; grid-template-columns: 1fr 380px; gap: 60px; align-items: start; }
+.article-toc {
+  position: sticky;
+  top: 88px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+.toc-title { font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.05em; }
+.toc-list { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+.toc-list a {
+  display: block;
+  font-size: 13px;
+  color: var(--text3);
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border-left: 2px solid transparent;
+  transition: all var(--transition);
+  line-height: 1.4;
+}
+.toc-list a:hover, .toc-list a.active { color: var(--accent); border-left-color: var(--accent); background: var(--accent-light); }
+.toc-list li.sub a { padding-left: 22px; font-size: 12.5px; }
+
+.article-content h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text);
+  margin: 40px 0 14px;
+  padding-top: 8px;
+  letter-spacing: -0.01em;
+}
+.article-content h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 28px 0 10px;
+}
+.article-content p { font-size: 15px; color: var(--text2); line-height: 1.78; margin-bottom: 16px; }
+.article-content ul { list-style: none; margin-bottom: 16px; display: flex; flex-direction: column; gap: 7px; }
+.article-content ul li { display: flex; align-items: flex-start; gap: 10px; font-size: 14.5px; color: var(--text2); line-height: 1.6; }
+.article-content ul li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 8px; }
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  margin: 20px 0 28px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.data-table th {
+  background: var(--bg2);
+  padding: 10px 14px;
+  text-align: left;
+  font-size: 11.5px;
+  font-family: 'DM Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text3);
+  border-bottom: 1px solid var(--border);
+}
+.data-table td {
+  padding: 11px 14px;
+  color: var(--text2);
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:hover td { background: var(--bg2); }
+
+.callout {
+  background: var(--accent-light);
+  border: 1px solid rgba(212,68,12,0.2);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 18px 22px;
+  margin: 24px 0;
+}
+.callout.blue { background: var(--accent3-light); border-color: rgba(27,79,138,0.2); border-left-color: var(--accent3); }
+.callout.green { background: var(--green-light); border-color: rgba(26,107,58,0.2); border-left-color: var(--green); }
+.callout-title { font-weight: 700; font-size: 13.5px; color: var(--text); margin-bottom: 4px; display: flex; align-items: center; gap: 7px; }
+.callout p { font-size: 13.5px; color: var(--text2); margin: 0; line-height: 1.65; }
+
+.code-block {
+  background: var(--text);
+  color: var(--bg2);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  font-family: 'DM Mono', monospace;
+  font-size: 12.5px;
+  line-height: 1.7;
+  overflow-x: auto;
+  margin: 16px 0;
+}
+.code-block .comment { color: var(--text3); }
+.code-block .val { color: #4ADE80; }
+.code-block .label { color: #93C5FD; }
+
+/* ─── BLOG ─── */
+.blog { background: var(--bg2); border-top: 1px solid var(--border); }
+.blog-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; }
+.blog-main {}
+.blog-sidebar {}
+
+.blog-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 20px;
+  transition: all var(--transition);
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.blog-card:hover { box-shadow: var(--shadow); border-color: var(--border2); }
+.blog-card-img {
+  height: 200px;
+  background: linear-gradient(135deg, var(--bg3) 0%, var(--bg2) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.blog-card-img .img-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(45deg, var(--border) 0, var(--border) 1px, transparent 0, transparent 50%);
+  background-size: 14px 14px;
+  opacity: 0.3;
+}
+.blog-card-body { padding: 24px; }
+.blog-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.blog-tag {
+  font-size: 11px;
+  font-family: 'DM Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 3px 9px;
+  border-radius: 100px;
+  font-weight: 600;
+}
+.blog-date { font-size: 12px; color: var(--text4); }
+.blog-card h3 { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 800; color: var(--text); margin-bottom: 8px; line-height: 1.3; }
+.blog-card p { font-size: 13.5px; color: var(--text3); line-height: 1.65; margin-bottom: 16px; }
+.blog-read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  transition: gap var(--transition);
+}
+.blog-read-more:hover { gap: 10px; }
+
+.sidebar-widget {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 20px;
+}
+.widget-title { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.05em; }
+.quick-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  transition: all var(--transition);
+}
+.quick-link:last-child { border-bottom: none; }
+.quick-link:hover { padding-left: 4px; }
+.quick-link-icon { font-size: 20px; }
+.quick-link-text { font-size: 13px; font-weight: 500; color: var(--text2); }
+.quick-link-sub { font-size: 11.5px; color: var(--text4); }
+.quick-link-arrow { margin-left: auto; color: var(--text4); font-size: 16px; }
+
+/* ─── CTA BAND ─── */
+.cta-band {
+  background: var(--text);
+  color: var(--bg);
+  padding: 56px 0;
+  position: relative;
+  overflow: hidden;
+}
+.cta-band::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(244,242,238,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(244,242,238,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+.cta-band-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: center;
+}
+.cta-band h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+.cta-band p { font-size: 14.5px; color: rgba(244,242,238,0.65); line-height: 1.65; max-width: 520px; }
+.cta-band-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-white { background: #fff; color: var(--text); font-weight: 700; }
+.btn-white:hover { background: var(--bg); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,0,0,0.2); color: var(--text); }
+.btn-ghost { background: transparent; color: rgba(244,242,238,0.8); border: 1px solid rgba(244,242,238,0.2); }
+.btn-ghost:hover { background: rgba(244,242,238,0.08); color: #fff; }
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 56px 0 0;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 240px 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+.footer-brand .logo { margin-bottom: 14px; }
+.footer-brand p { font-size: 13px; color: var(--text3); line-height: 1.65; margin-bottom: 16px; }
+.footer-col-title { font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 700; color: var(--text); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; }
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.footer-links a { font-size: 13.5px; color: var(--text3); text-decoration: none; transition: color var(--transition); }
+.footer-links a:hover { color: var(--accent); }
+.footer-partner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text4);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+}
+.footer-partner:last-child { border-bottom: none; }
+.partner-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding: 18px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.footer-bottom p { font-size: 12.5px; color: var(--text4); }
+.footer-bottom-links { display: flex; gap: 20px; }
+.footer-bottom-links a { font-size: 12.5px; color: var(--text4); text-decoration: none; transition: color var(--transition); }
+.footer-bottom-links a:hover { color: var(--text3); }
+
+/* ─── FLOATING HELP ─── */
+.float-help {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+.float-help-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(212,68,12,0.4);
+  transition: all var(--transition);
+  font-size: 22px;
+}
+.float-help-btn:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(212,68,12,0.5); }
+.float-tooltip {
+  background: var(--text);
+  color: var(--bg);
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(8px);
+  transition: all var(--transition);
+  pointer-events: none;
+}
+.float-help:hover .float-tooltip { opacity: 1; transform: translateX(0); }
+
+/* ─── ANIMATION ─── */
+@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+.fade-up { animation: fadeUp 0.55s ease forwards; }
+.delay-1 { animation-delay: 0.1s; opacity:0; }
+.delay-2 { animation-delay: 0.2s; opacity:0; }
+.delay-3 { animation-delay: 0.3s; opacity:0; }
+.delay-4 { animation-delay: 0.4s; opacity:0; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1024px) {
+  .sectors-grid { grid-template-columns: repeat(2, 1fr); }
+  .product-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-card { display: none; }
+  .pillar-grid { grid-template-columns: 1fr; }
+  .article-toc { position: static; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .eff-grid { grid-template-columns: 1fr; }
+  .blog-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .container { padding: 0 20px; }
+  nav { padding: 0 20px; gap: 16px; }
+  .nav-links { display: none; }
+  .sectors-grid { grid-template-columns: 1fr; }
+  .product-grid { grid-template-columns: 1fr; }
+  .cta-band-inner { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .hero-stats { flex-direction: column; }
+  .hero-stat { border-right: none; border-bottom: 1px solid var(--border); }
+  .hero-stat:last-child { border-bottom: none; }
+  section { padding: 48px 0; }
+  .topbar-inner { flex-direction: column; gap: 4px; }
+  #iletisim .container > div[style*="grid-template-columns:1fr 1fr 1fr"] { display: flex !important; flex-direction: column; }
+  #iletisim .container > div[style*="grid-template-columns:1fr 1fr"] { display: flex !important; flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-links">
+      <span>📞 Teknik Danışmanlık: <a href="tel:+905058525331" class="topbar-accent">0(505) 852 53 31</a></span>
+      <span class="ribbon-dot" style="background:rgba(244,242,238,0.3)"></span>
+      <span>Yetkili Satıcı: <a href="https://aytechelektromarket.com" target="_blank" class="topbar-accent">Aytech Elektromarket</a> & <a href="https://schneiderups.com.tr" target="_blank" class="topbar-accent">SchneiderUPS.com.tr</a></span>
+    </div>
+    <div style="font-size:11px;color:rgba(244,242,238,0.45);">Tunçmatik & APC by Schneider Electric Yetkili Satıcısı</div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <nav>
+    <a href="#" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+        </svg>
+      </div>
+      <div>
+        <span class="logo-text">KesintisizGüç</span>
+        <span class="logo-sub">.com — Enerji Sürekliliği Portalı</span>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#sektorler">Sektörler</a></li>
+      <li><a href="#verimlilik">Enerji Verimliliği</a></li>
+      <li><a href="#urunler">Ürünler</a></li>
+      <li><a href="#rehber">Teknik Rehber</a></li>
+      <li><a href="#blog">Makaleler</a></li>
+      <li><a href="#iletisim">İletişim</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Tema değiştir">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="https://aytechelektromarket.com" target="_blank" class="btn btn-outline" style="font-size:12.5px;">Elektromarket</a>
+      <a href="https://aytechteknoloji.com" target="_blank" class="btn btn-primary" style="font-size:12.5px;">Kurumsal Teklif Al →</a>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge fade-up"><span></span> Mühendislik Temelli Bağımsız Portal</div>
+        <h1 class="fade-up delay-1">Endüstriyel Güç<br><em>Sürekliliği</em> ve<br>Enerji Verimliliği</h1>
+        <h2 class="fade-up delay-2">Veri Merkezlerinden Fabrikalara, Asansör Sistemlerinden Gaming Ekosistemlerine — Her Ortamda Kesintisiz ve Verimli Güç</h2>
+        <p class="hero-p fade-up delay-3">Türkiye'de plansız enerji kesintisinin saatlik maliyeti <strong>50.000 TL'den 2.000.000 TL'ye</strong> uzanmaktadır. Mühendislik prensipleri, IEC/IEEE standartları ve bağımsız teknik analizlerle doğru çözümü birlikte buluyoruz.</p>
+        <div class="hero-actions fade-up delay-4">
+          <a href="#sektorler" class="btn btn-primary">Sektörünüzü Seçin →</a>
+          <a href="https://aytechteknoloji.com" target="_blank" class="btn btn-blue">Kurumsal Proje Teklifi</a>
+          <a href="https://aytechelektromarket.com" target="_blank" class="btn btn-outline">Ürün Kataloğu</a>
+        </div>
+        <div class="hero-stats fade-up delay-4">
+          <div class="hero-stat">
+            <span class="hero-stat-val">500+</span>
+            <span class="hero-stat-label">Kurumsal Proje</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-val">200kVA</span>
+            <span class="hero-stat-label">Maks. Kapasite</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-val">15+ Yıl</span>
+            <span class="hero-stat-label">Sektör Deneyimi</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-val">7/24</span>
+            <span class="hero-stat-label">Teknik Servis</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Card -->
+      <div class="hero-card fade-up delay-3">
+        <div class="hero-card-header">
+          <div class="hero-card-dot" style="background:#EF4444"></div>
+          <div class="hero-card-dot" style="background:#F59E0B"></div>
+          <div class="hero-card-dot" style="background:#10B981"></div>
+          <span style="font-family:'DM Mono',monospace;font-size:12px;color:rgba(244,242,238,0.5);margin-left:8px;">Hızlı Erişim</span>
+        </div>
+        <div class="hero-card-body">
+          <a href="https://aytechelektromarket.com" target="_blank" class="cta-item" style="text-decoration:none;">
+            <div class="cta-icon" style="background:#FBF0EB;">⚡</div>
+            <div>
+              <div class="cta-text-title">Tunçmatik Ürün Kataloğu</div>
+              <div class="cta-text-sub">Sincap, Sultan, Ultra One & ev serileri</div>
+            </div>
+            <span class="cta-arrow">›</span>
+          </a>
+          <a href="https://aytechteknoloji.com" target="_blank" class="cta-item" style="text-decoration:none;">
+            <div class="cta-icon" style="background:#EBF1F9;">🏢</div>
+            <div>
+              <div class="cta-text-title">Kurumsal Proje Teklifi</div>
+              <div class="cta-text-sub">APC by Schneider Electric & Tunçmatik</div>
+            </div>
+            <span class="cta-arrow">›</span>
+          </a>
+          <a href="#verimlilik" class="cta-item" style="text-decoration:none;">
+            <div class="cta-icon" style="background:#EBF5EF;">📊</div>
+            <div>
+              <div class="cta-text-title">Enerji Tasarrufu Hesapla</div>
+              <div class="cta-text-sub">Yıllık tasarruf potansiyelinizi görün</div>
+            </div>
+            <span class="cta-arrow">›</span>
+          </a>
+          <a href="#rehber" class="cta-item" style="text-decoration:none;">
+            <div class="cta-icon" style="background:#FBF6E7;">📋</div>
+            <div>
+              <div class="cta-text-title">Teknik Rehber</div>
+              <div class="cta-text-sub">Veri merkezi UPS seçim rehberi</div>
+            </div>
+            <span class="cta-arrow">›</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ribbon -->
+  <div class="hero-ribbon">
+    <div class="container">
+      <div class="hero-ribbon-inner">
+        <div class="ribbon-item">✅ <strong>IEC / IEEE Standartları</strong> Referanslı</div>
+        <div class="ribbon-dot"></div>
+        <div class="ribbon-item">🏆 <strong>Tunçmatik</strong> Yetkili Satıcı</div>
+        <div class="ribbon-dot"></div>
+        <div class="ribbon-item">🔵 <strong>APC by Schneider Electric</strong> Yetkili Satıcı</div>
+        <div class="ribbon-dot"></div>
+        <div class="ribbon-item">🛠️ <strong>Yerinde Keşif</strong> & Şartname Hazırlama</div>
+        <div class="ribbon-dot"></div>
+        <div class="ribbon-item">📦 <strong>Hızlı Teslimat</strong> Türkiye Geneli</div>
+        <div class="ribbon-dot"></div>
+        <div class="ribbon-item">🔧 <strong>Kurulum & Devreye Alma</strong> Dahil</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTORS -->
+<section class="sectors" id="sektorler">
+  <div class="container">
+    <div class="sectors-header">
+      <span class="section-label">Sektörel Çözümler</span>
+      <h2 class="section-title">Hangi Sektörde Faaliyet Gösteriyorsunuz?</h2>
+      <p class="section-sub">Her sektörün güç sürekliliği ihtiyacı farklıdır. Sektörünüze özel mühendislik çözümleri için tıklayın.</p>
+    </div>
+    <div class="sectors-grid">
+
+      <div class="sector-card" style="--card-accent:var(--accent3);">
+        <span class="sector-icon">🖥️</span>
+        <div class="sector-title">Veri Merkezleri & Sunucu Odaları</div>
+        <div class="sector-desc">Tier I–IV yedeklilik mimarileri, PUE optimizasyonu, DCIM entegrasyonu. Veri kaybı toleransı sıfır ortamlar için.</div>
+        <span class="sector-tag" style="--tag-bg:var(--accent3-light);--tag-color:var(--accent3);">🔵 Kurumsal</span>
+      </div>
+
+      <div class="sector-card" style="--card-accent:var(--accent);">
+        <span class="sector-icon">🏭</span>
+        <div class="sector-title">Endüstriyel Üretim & Otomasyon</div>
+        <div class="sector-desc">CNC tezgahları, SCADA/PLC sistemleri, üretim hatları. Voltaj regülasyonu ve harmonik filtreleme.</div>
+        <span class="sector-tag">🔴 Sanayi</span>
+      </div>
+
+      <div class="sector-card" style="--card-accent:var(--green);">
+        <span class="sector-icon">🏥</span>
+        <div class="sector-title">Tıbbi & Klinik Sistemler</div>
+        <div class="sector-desc">IEC 60364-7-710 standardı. Ameliyathaneler, yoğun bakım, görüntüleme sistemleri. Sıfır tolerans.</div>
+        <span class="sector-tag" style="--tag-bg:var(--green-light);--tag-color:var(--green);">🟢 Medikal</span>
+      </div>
+
+      <div class="sector-card" style="--card-accent:var(--gold);">
+        <span class="sector-icon">🏢</span>
+        <div class="sector-title">Kurumsal Ofis & AVM</div>
+        <div class="sector-desc">Merkezi UPS sistemleri, güç dağıtım üniteleri (PDU), akıllı izleme. Büyük yapılar için bütünleşik çözüm.</div>
+        <span class="sector-tag" style="--tag-bg:var(--gold-light);--tag-color:var(--gold);">🟡 Ticari</span>
+      </div>
+
+      <div class="sector-card" style="--card-accent:var(--accent);">
+        <span class="sector-icon">🛗</span>
+        <div class="sector-title">Asansör & Yangın Sistemleri</div>
+        <div class="sector-desc">BYKHY & EN 50171 zorunluluğu. Motor yükü toleranslı UPS. Asansör kurtarma, yangın ihbar, duman tahliye.</div>
+        <span class="sector-tag">⚠️ Yasal Zorunlu</span>
+      </div>
+
+      <div class="sector-card" style="--card-accent:var(--accent3);">
+        <span class="sector-icon">📡</span>
+        <div class="sector-title">Telekomünikasyon & Baz İstasyonları</div>
+        <div class="sector-desc">7/24 kesintisiz iletişim. Rectifier sistemleri, VRLA batarya kabinleri, uzaktan izleme çözümleri.</div>
+        <span class="sector-tag" style="--tag-bg:var(--accent3-light);--tag-color:var(--accent3);">🔵 Telekom</span>
+      </div>
+
+      <div class="sector-card" style="--card-accent:var(--green);">
+        <span class="sector-icon">🏨</span>
+        <div class="sector-title">Otel & Konaklama Tesisleri</div>
+        <div class="sector-desc">Misafir güvenliği ve konfor. Asansör sistemleri, yangın altyapısı, sunucu odası ve genel aydınlatma koruması.</div>
+        <span class="sector-tag" style="--tag-bg:var(--green-light);--tag-color:var(--green);">🟢 Konaklama</span>
+      </div>
+
+      <div class="sector-card" style="--card-accent:var(--gold);">
+        <span class="sector-icon">🎮</span>
+        <div class="sector-title">Gaming, Streaming & Home-Office</div>
+        <div class="sector-desc">PSU koruması, anlık spike filtresi. Yüksek performanslı sistemler, yayın ekipmanları, ev ofis için kompakt çözümler.</div>
+        <span class="sector-tag" style="--tag-bg:var(--gold-light);--tag-color:var(--gold);">🟡 Ev/Ofis</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ENERGY EFFICIENCY -->
+<section class="efficiency" id="verimlilik">
+  <div class="container">
+    <span class="section-label">Enerji Verimliliği</span>
+    <h2 class="section-title">Kesinti Kadar Maliyetli: Enerji İsrafı</h2>
+    <p class="section-sub" style="margin-bottom:48px;">Yanlış boyutlandırılmış, düşük verimli sistemler işletmelerin faturasına her yıl sessizce yüz binlerce lira ekler. Yatırımınızın geri dönüşünü hesaplayın.</p>
+
+    <div class="eff-grid">
+      <div>
+        <!-- CALCULATOR -->
+        <div class="eff-calc">
+          <div class="eff-calc-title">💡 Enerji Tasarrufu Hesaplayıcısı</div>
+          <div class="eff-calc-sub">Mevcut ve hedef sistem verimliliğinizi girin</div>
+
+          <div class="calc-slider-group">
+            <div class="calc-label"><span>UPS Kapasitesi</span><span class="calc-val" id="cap-val">100 kVA</span></div>
+            <input type="range" id="capacity" min="10" max="500" value="100" step="10">
+          </div>
+          <div class="calc-slider-group">
+            <div class="calc-label"><span>Mevcut Verimlilik</span><span class="calc-val" id="eff-old-val">%92</span></div>
+            <input type="range" id="eff-old" min="70" max="97" value="80" step="1">
+          </div>
+          <div class="calc-slider-group">
+            <div class="calc-label"><span>Hedef Verimlilik</span><span class="calc-val" id="eff-new-val">%97</span></div>
+            <input type="range" id="eff-new" min="90" max="99" value="97" step="1">
+          </div>
+          <div class="calc-slider-group">
+            <div class="calc-label"><span>Birim Enerji Maliyeti (TL/kWh)</span><span class="calc-val" id="price-val">4.0 TL</span></div>
+            <input type="range" id="price" min="2" max="10" value="4" step="0.5">
+          </div>
+
+          <div class="calc-result">
+            <div class="calc-result-row">
+              <span>Mevcut yıllık enerji kaybı</span>
+              <span id="r-old">—</span>
+            </div>
+            <div class="calc-result-row">
+              <span>Hedef yıllık enerji kaybı</span>
+              <span id="r-new">—</span>
+            </div>
+            <div class="calc-result-row highlight">
+              <span>💰 Yıllık Tasarruf Potansiyeli</span>
+              <span id="r-save">—</span>
+            </div>
+            <div class="calc-result-row">
+              <span>5 Yıllık Toplam Tasarruf</span>
+              <span id="r-5y">—</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout green" style="margin-top:16px;">
+          <div class="callout-title">📌 Soğutma Tasarrufu Bonusu</div>
+          <p>Her kW azalan enerji kaybı = sunucu odası/tesis soğutma yükünden ~1,3 kW daha az. Toplam tasarruf hesaptakinin <strong>%25-40 üstünde</strong> gerçekleşir.</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="eff-table-wrap">
+          <table class="eff-table">
+            <thead>
+              <tr>
+                <th>Verimlilik</th>
+                <th>Kayıp Oranı</th>
+                <th>Sınıf</th>
+                <th>Teknoloji</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>%91–93</strong></td>
+                <td>%7–9</td>
+                <td><span class="eff-badge" style="background:#FEE2E2;color:#991B1B;">Kabul Edilebilir</span></td>
+                <td>Eski nesil</td>
+              </tr>
+              <tr>
+                <td><strong>%94–96</strong></td>
+                <td>%4–6</td>
+                <td><span class="eff-badge" style="background:#FEF9C3;color:#854D0E;">İyi</span></td>
+                <td>Modern Online</td>
+              </tr>
+              <tr>
+                <td><strong>%96–97</strong></td>
+                <td>%3–4</td>
+                <td><span class="eff-badge" style="background:#DCFCE7;color:#166534;">Çok İyi</span></td>
+                <td>High-Efficiency</td>
+              </tr>
+              <tr>
+                <td><strong>%97–99</strong></td>
+                <td>%1–3</td>
+                <td><span class="eff-badge" style="background:#D1FAE5;color:#065F46;">Mükemmel ⭐</span></td>
+                <td>ECO + Aktif</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="margin-top:24px;">
+          <h3 style="font-family:'Syne',sans-serif;font-size:17px;font-weight:800;color:var(--text);margin-bottom:14px;">ECO Modu: Ne Zaman Güvenli?</h3>
+          <table class="data-table">
+            <thead><tr><th>Mod</th><th>Verimlilik</th><th>Transfer</th><th>Uygun Ortam</th></tr></thead>
+            <tbody>
+              <tr><td>Online (VFI)</td><td style="color:var(--accent3);font-weight:600;">%94–97</td><td>0 ms</td><td>Kritik IT, medikal, sanayi</td></tr>
+              <tr><td>ECO Mode</td><td style="color:var(--green);font-weight:600;">%98–99</td><td>2–4 ms</td><td>Ofis, genel yükler</td></tr>
+              <tr><td>Line Interactive</td><td style="color:var(--gold);font-weight:600;">%96–98</td><td>4–8 ms</td><td>Home-office, SMB</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout blue" style="margin-top:8px;">
+          <div class="callout-title">🔵 Mühendislik Notu</div>
+          <p>CNC, medikal ve hassas otomasyon için daima <strong>Online VFI modu</strong> tercih edilmeli. ECO modunun 2–4 ms transfer süresi bu sistemler için risk taşır.</p>
+        </div>
+
+        <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;">
+          <a href="https://aytechelektromarket.com" target="_blank" class="btn btn-primary">Yüksek Verimli Ürünleri İncele →</a>
+          <a href="https://aytechteknoloji.com" target="_blank" class="btn btn-outline">Kurumsal Proje</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="urunler">
+  <div class="container">
+    <span class="section-label">Ürün Serileri</span>
+    <h2 class="section-title">Yetkili Satıcı Olduğumuz Markalar</h2>
+    <p class="section-sub" style="margin-bottom:32px;">Tunçmatik ve Schneider Electric ürünlerinde yetkili satıcı olarak; doğru ürün seçimi, şartname hazırlama, kurulum ve bakım hizmetlerini tek noktadan sunuyoruz.</p>
+
+    <div class="products-tabs">
+      <button class="tab-btn active" onclick="switchTab('tuncmatik')">⚡ Tunçmatik</button>
+      <button class="tab-btn" onclick="switchTab('schneider')">🔵 APC by Schneider Electric</button>
+    </div>
+
+    <!-- TUNCMATIK -->
+    <div class="tab-content active" id="tab-tuncmatik">
+      <div class="product-brand-header">
+        <div class="brand-badge" style="background:var(--accent-light);color:var(--accent);">TUNÇMATİK</div>
+        <div>
+          <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px;">Türkiye'nin En Güçlü Yerli UPS Üreticisi</div>
+          <div class="brand-desc">KOBİ'den büyük sanayi tesislerine. Türkiye şebekesine özel optimize tasarım, yerli servis ağı ve fiyat/performans avantajı. Geniş kapasite aralığında kesintisiz güç çözümleri.</div>
+        </div>
+        <a href="https://aytechelektromarket.com" target="_blank" class="btn btn-primary" style="margin-left:auto;flex-shrink:0;">Tüm Ürünler →</a>
+      </div>
+
+      <div class="product-grid">
+
+        <div class="product-card featured">
+          <div class="product-featured-tag">⭐ Öne Çıkan</div>
+          <div class="product-series">Trifaze — Ağır Endüstri</div>
+          <div class="product-name">Tunçmatik Ultra One</div>
+          <div class="product-range">60 kVA — 200 kVA | 3 Faz</div>
+          <div class="product-desc">Büyük fabrikalar, hastaneler, AVM ve veri merkezleri için ağır endüstriyel yük. Geniş kapasite aralığında yerli üretim güvencesi.</div>
+          <ul class="product-specs">
+            <li>Online Çift Dönüşüm (VFI) topoloji</li>
+            <li>%96 online / %99'a kadar ECO mod verimi</li>
+            <li>N+1 ve 2N paralel yedeklilik desteği</li>
+            <li>Modbus / RS-485 / SNMP haberleşme</li>
+            <li>VRLA & Li-ion batarya seçeneği</li>
+            <li>Türkiye şebekesine özel geniş voltaj toleransı</li>
+          </ul>
+          <div class="product-cta">
+            <a href="https://aytechelektromarket.com" target="_blank" class="primary">Fiyat & Teklif</a>
+            <a href="https://aytechteknoloji.com" target="_blank" class="secondary">Teknik Detay</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-series">Trifaze — Orta Sanayi</div>
+          <div class="product-name">Tunçmatik Ultra One</div>
+          <div class="product-range">10 kVA — 40 kVA | 3 Faz</div>
+          <div class="product-desc">Orta ölçekli fabrikalar, atölyeler ve üretim hatları için. SCADA/PLC entegrasyonu, paralel çalışma desteği.</div>
+          <ul class="product-specs">
+            <li>Online Çift Dönüşüm topoloji</li>
+            <li>Modbus/RS-485 SCADA haberleşme</li>
+            <li>Paralel yedeklilik (N+1) desteği</li>
+            <li>Akıllı batarya yönetimi</li>
+          </ul>
+          <div class="product-cta">
+            <a href="https://aytechelektromarket.com" target="_blank" class="primary">İncele & Sipariş</a>
+            <a href="https://aytechteknoloji.com" target="_blank" class="secondary">Teklif İste</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-series">Tek Faz — Orta Kapasite</div>
+          <div class="product-name">Tunçmatik PowerUP Eco / PowerUP One</div>
+          <div class="product-range">6 kVA — 10 kVA | Tek Faz</div>
+          <div class="product-desc">Orta ölçekli ofis, klinik ve işletmeler için. CNC tezgahları, lazer kesim ve tekstil ekipmanlarına online koruma.</div>
+          <ul class="product-specs">
+            <li>Online Çift Dönüşüm (VFI)</li>
+            <li>Geniş giriş voltaj aralığı</li>
+            <li>Çıkış hassasiyeti ±%1</li>
+            <li>PowerUP One: Li-ion batarya seçeneği</li>
+          </ul>
+          <div class="product-cta">
+            <a href="https://aytechelektromarket.com" target="_blank" class="primary">Sipariş Ver</a>
+            <a href="https://aytechelektromarket.com" target="_blank" class="secondary">Karşılaştır</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-series">Tek Faz — Kompakt</div>
+          <div class="product-name">Tunçmatik Pro3 / Eco</div>
+          <div class="product-range">1 kVA — 3 kVA | Tek Faz</div>
+          <div class="product-desc">Ev ofisi, küçük işletme ve hassas elektronik cihazlar için kompakt online koruma. Kombi kartı, modem ve ağ altyapısı.</div>
+          <ul class="product-specs">
+            <li>Line-Interactive + AVR (Eco serisi)</li>
+            <li>Online Çift Dönüşüm (Pro3 serisi)</li>
+            <li>160V–280V batarya tüketmeden koruma</li>
+            <li>USB haberleşme (otomatik kapanma)</li>
+          </ul>
+          <div class="product-cta">
+            <a href="https://aytechelektromarket.com" target="_blank" class="primary">Satın Al</a>
+            <a href="https://aytechelektromarket.com" target="_blank" class="secondary">Detaylar</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-series">Gaming / Streaming</div>
+          <div class="product-name">Tunçmatik Line II / Digitech Eco</div>
+          <div class="product-range">850 VA — 2 kVA</div>
+          <div class="product-desc">Yüksek performanslı GPU'lar, yayın ekipmanları ve çoklu monitör kurulumları için güçlendirilmiş spike koruması.</div>
+          <ul class="product-specs">
+            <li>Yüksek peak akım toleransı</li>
+            <li>Güçlendirilmiş surge koruması</li>
+            <li>Çoklu çıkış soketi</li>
+            <li>10–20 dk özerk çalışma</li>
+          </ul>
+          <div class="product-cta">
+            <a href="https://aytechelektromarket.com" target="_blank" class="primary">Satın Al</a>
+            <a href="https://aytechelektromarket.com" target="_blank" class="secondary">Detaylar</a>
+          </div>
+        </div>
+
+        <div class="product-card" style="border-style:dashed;display:flex;align-items:center;justify-content:center;text-align:center;min-height:200px;">
+          <div>
+            <div style="font-size:32px;margin-bottom:10px;">🔧</div>
+            <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--text);margin-bottom:6px;">Özel Proje & Şartname</div>
+            <div style="font-size:12.5px;color:var(--text3);margin-bottom:14px;">İhtiyacınıza özel boyutlandırma ve teklif için ekibimize ulaşın</div>
+            <a href="https://aytechteknoloji.com" target="_blank" class="btn btn-primary" style="font-size:12px;">Teklif Al →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SCHNEIDER -->
+    <div class="tab-content" id="tab-schneider">
+      <div class="product-brand-header">
+        <div class="brand-badge" style="background:var(--accent3-light);color:var(--accent3);">SCHNEIDER ELECTRIC</div>
+        <div>
+          <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px;">Global Veri Merkezi ve Kritik Altyapı Standardı</div>
+          <div class="brand-desc">Küresel %30+ pazar payı. EcoStruxure ekosistemi, bina otomasyon entegrasyonu, global servis ağı.</div>
+        </div>
+        <a href="https://aytechteknoloji.com" target="_blank" class="btn btn-blue" style="margin-left:auto;flex-shrink:0;">Kurumsal Teklif →</a>
+      </div>
+
+      <div class="product-grid">
+
+        <div class="product-card">
+          <div class="product-series">Kurumsal Sunucu Odası</div>
+          <div class="product-name">APC Smart-UPS</div>
+          <div class="product-range">750 VA — 20 kVA</div>
+          <div class="product-desc">Rack entegre, SNMP yönetimli kurumsal sunucu odası standardı. Li-ion batarya seçeneği.</div>
+          <ul class="product-specs">
+            <li>Online Çift Dönüşüm (VFI)</li>
+            <li>19" rack form faktörü (2U–3U)</li>
+            <li>EcoStruxure entegrasyonu</li>
+            <li>Li-ion batarya (Ultra serisi)</li>
+          </ul>
+          <div class="product-cta">
+            <a href="https://schneiderups.com.tr" target="_blank" class="primary">Teklif İste</a>
+            <a href="https://schneiderups.com.tr" target="_blank" class="secondary">Teknik Detay</a>
+          </div>
+        </div>
+
+        <div class="product-card featured">
+          <div class="product-featured-tag">⭐ Kurumsal</div>
+          <div class="product-series">Veri Merkezi</div>
+          <div class="product-name">APC Galaxy VS</div>
+          <div class="product-range">10 kVA — 150 kVA</div>
+          <div class="product-desc">Kurumsal veri merkezleri ve kritik altyapı için. EcoStruxure IT ile bulut tabanlı izleme.</div>
+          <ul class="product-specs">
+            <li>%99 verimlilik (ECO modda)</li>
+            <li>VRLA ve Li-ion batarya desteği</li>
+            <li>IEC 62040-1 Sınıf I yangın uyumu</li>
+            <li>Modüler batarya genişletme</li>
+          </ul>
+          <div class="product-cta">
+            <a href="https://aytechteknoloji.com" target="_blank" class="primary">Kurumsal Teklif</a>
+            <a href="https://aytechteknoloji.com" target="_blank" class="secondary">Şartname</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-series">Büyük Veri Merkezi</div>
+          <div class="product-name">APC Galaxy VX</div>
+          <div class="product-range">100 kVA — 1.000 kVA</div>
+          <div class="product-desc">Hiperscale ve büyük kurumsal veri merkezleri. Çalışırken modül değiştirme, 2N yedeklilik.</div>
+          <ul class="product-specs">
+            <li>Modüler güç modülleri</li>
+            <li>N+1 ve 2N paralel yedeklilik</li>
+            <li>PUE optimizasyon algoritmaları</li>
+            <li>3 fazlı giriş/çıkış</li>
+          </ul>
+          <div class="product-cta">
+            <a href="https://aytechteknoloji.com" target="_blank" class="primary">Proje Teklifi</a>
+            <a href="https://aytechteknoloji.com" target="_blank" class="secondary">Teknik Detay</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="callout blue" style="margin-top:24px;">
+        <div class="callout-title">🔵 EcoStruxure Avantajı</div>
+        <p>Schneider Electric'in EcoStruxure platformu; UPS yönetimini, bina otomasyon sistemini (BMS) ve soğutma kontrolünü tek dashboard üzerinde birleştirir. Asansör ve yangın sistemleri dahil tüm güç altyapınızı tek ekrandan izleyin.</p>
+      </div>
+    </div>
+
+    <!-- SEÇIM REHBERİ -->
+    <div style="margin-top:40px;">
+      <h3 style="font-family:'Syne',sans-serif;font-size:17px;font-weight:800;color:var(--text);margin-bottom:16px;">Hangi Proje İçin Hangi Ürün?</h3>
+      <div style="overflow-x:auto;">
+        <table class="data-table">
+          <thead>
+            <tr><th>Proje Tipi</th><th>Kapasite</th><th>Önerilen Ürün</th><th>Neden?</th><th>Sipariş</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Küçük CNC / Atölye</td><td>1–10 kVA</td><td><strong>Tunçmatik Pro3 / Eco</strong></td><td>Fiyat/perf., yerli servis</td><td><a href="https://aytechelektromarket.com" target="_blank" style="color:var(--accent);font-weight:600;text-decoration:none;">Sipariş →</a></td></tr>
+            <tr><td>Orta Fabrika / Üretim</td><td>10–40 kVA</td><td><strong>Tunçmatik Ultra One</strong></td><td>Endüstriyel dayanıklılık</td><td><a href="https://aytechelektromarket.com" target="_blank" style="color:var(--accent);font-weight:600;text-decoration:none;">Sipariş →</a></td></tr>
+            <tr><td>Büyük Tesis / AVM / Hastane</td><td>60–200 kVA</td><td><strong style="color:var(--accent);">Tunçmatik Ultra One</strong></td><td>Büyük kapasite, yerli servis</td><td><a href="https://aytechteknoloji.com" target="_blank" style="color:var(--accent);font-weight:600;text-decoration:none;">Teklif Al →</a></td></tr>
+            <tr><td>Kurumsal Sunucu Odası</td><td>1–20 kVA</td><td><strong>APC Smart-UPS</strong></td><td>Rack entegrasyon, ekosistem</td><td><a href="https://schneiderups.com.tr" target="_blank" style="color:var(--accent3);font-weight:600;text-decoration:none;">Teklif Al →</a></td></tr>
+            <tr><td>Büyük Veri Merkezi</td><td>100+ kVA</td><td><strong>APC Galaxy VS/VX</strong></td><td>Global referans, modüler</td><td><a href="https://aytechteknoloji.com" target="_blank" style="color:var(--accent3);font-weight:600;text-decoration:none;">Teklif Al →</a></td></tr>
+            <tr><td>Asansör / Yangın</td><td>1–30 kVA</td><td><strong>Tunçmatik / APC Easy</strong></td><td>Motor toleransı, EN 50171</td><td><a href="https://aytechteknoloji.com" target="_blank" style="color:var(--accent3);font-weight:600;text-decoration:none;">Proje →</a></td></tr>
+            <tr><td>Gaming / Home-Office</td><td>1–3 kVA</td><td><strong>Tunçmatik Pro3 / Eco</strong></td><td>Kompakt, spike koruması</td><td><a href="https://aytechelektromarket.com" target="_blank" style="color:var(--accent);font-weight:600;text-decoration:none;">Satın Al →</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PILLAR ARTICLE PREVIEW -->
+<section class="pillar" id="rehber">
+  <div class="container">
+    <span class="section-label">Teknik Rehber</span>
+    <h2 class="section-title">Veri Merkezi UPS Seçim Rehberi</h2>
+    <p class="section-sub" style="margin-bottom:48px;">IT Müdürleri ve Tesis Yöneticileri için kapsamlı mühendislik rehberi</p>
+
+    <div class="pillar-grid">
+      <div class="article-content">
+
+        <h2 id="toc-yuk">Temel Kavramlar</h2>
+        <h3 id="toc-yuk-form">Yük Hesabı ve Boyutlandırma</h3>
+        <p>UPS seçiminin ilk adımı korunacak yükün doğru hesaplanmasıdır. Sunucu ve aktif ekipmanlarda güç faktörü (PF) genellikle 0,90–0,99 arasındadır.</p>
+
+        <div class="code-block">
+<span class="comment">// Boyutlandırma Formülü</span>
+<span class="label">UPS kVA</span> = <span class="val">Toplam Yük (kW)</span> / <span class="val">Güç Faktörü (PF)</span>
+<span class="comment">// Emniyet Marjı: %20-30 ekle</span>
+
+<span class="comment">// Örnek:</span>
+<span class="label">40 kW yük</span>, PF=0,95 → 42,1 kVA
+→ Emniyet marjıyla: <span class="val">50 kVA sistem</span>
+        </div>
+
+        <h3 id="toc-yedek">Yedeklilik Mimarileri</h3>
+        <table class="data-table">
+          <thead><tr><th>Tier</th><th>Yedeklilik</th><th>Çalışma Garantisi</th><th>Kullanım</th></tr></thead>
+          <tbody>
+            <tr><td>Tier I</td><td>N</td><td>%99,671</td><td>Küçük ofis sunucu odası</td></tr>
+            <tr><td>Tier II</td><td>N+1</td><td>%99,741</td><td>Kurumsal ofis, KOBİ</td></tr>
+            <tr><td>Tier III</td><td>N+1 (bakım)</td><td>%99,982</td><td>Bölgesel veri merkezi</td></tr>
+            <tr><td>Tier IV</td><td>2N veya 2(N+1)</td><td>%99,995</td><td>Finans, telekom, kritik</td></tr>
+          </tbody>
+        </table>
+
+        <h2 id="toc-pue">PUE: Enerji Verimliliği Göstergesi</h2>
+        <div class="code-block">
+<span class="label">PUE</span> = <span class="val">Toplam Tesis Gücü</span> / <span class="val">IT Ekipmanı Gücü</span>
+
+<span class="comment">PUE 1,0  → İdeal (teorik)
+PUE 1,2  → Hiperscale standardı
+PUE 1,5  → Modern tesis
+PUE 2,0  → Türkiye ortalaması
+PUE 3,0+ → Verimsiz, eski nesil</span>
+        </div>
+
+        <h2 id="toc-batarya">Batarya Teknolojileri: VRLA vs. Li-ion</h2>
+        <table class="data-table">
+          <thead><tr><th>Kriter</th><th>VRLA</th><th>Li-ion</th></tr></thead>
+          <tbody>
+            <tr><td>İlk Yatırım</td><td>Düşük</td><td>%30–50 yüksek</td></tr>
+            <tr><td>Batarya Ömrü</td><td>3–5 yıl</td><td>8–10 yıl</td></tr>
+            <tr><td>Ağırlık/Hacim</td><td>Yüksek</td><td>%60–70 az</td></tr>
+            <tr><td>Sıcaklık Hassasiyeti</td><td>Çok yüksek</td><td>Düşük</td></tr>
+            <tr><td>TCO (5 yıl)</td><td>Yüksek</td><td>Eşit veya avantajlı</td></tr>
+          </tbody>
+        </table>
+
+        <h2 id="toc-asansor">Yasal Zorunluluklar: Asansör & Yangın</h2>
+        <table class="data-table">
+          <thead><tr><th>Sistem</th><th>Yasal Dayanak</th><th>Min. Çalışma Süresi</th></tr></thead>
+          <tbody>
+            <tr><td>Yangın ihbar santrali</td><td>BYKHY Madde 73</td><td>72 saat bekleme + 30 dk alarm</td></tr>
+            <tr><td>Duman tahliye fanları</td><td>BYKHY Madde 101</td><td>60 dakika tam yük</td></tr>
+            <tr><td>Yangın pompaları</td><td>BYKHY + TS EN 12845</td><td>30–60 dakika</td></tr>
+            <tr><td>Asansör kurtarma</td><td>2014/33/AB Yönetmeliği</td><td>Kata ulaştırma + kapı açma</td></tr>
+            <tr><td>Acil aydınlatma</td><td>TS EN 50171</td><td>1–3 saat</td></tr>
+          </tbody>
+        </table>
+
+        <h3 id="toc-motor">Motor Yükü Boyutlandırma</h3>
+        <p>Asansör motorları ve yangın tahliye fanları devreye girerken nominal akımının 5–8 katı kalkış akımı (inrush current) çeker. IT UPS'leri bu yükü kaldıramaz — özel motor toleranslı UPS seçimi zorunludur.</p>
+        <div class="code-block">
+<span class="comment">// Motor Yükü Boyutlandırma Örneği</span>
+<span class="label">Nominal Motor Gücü</span>: <span class="val">5,5 kW</span> (asansör motoru)
+<span class="label">Kalkış Katsayısı</span>: <span class="val">7x</span>
+<span class="label">Gerekli Peak Tolerans</span>: 5,5 × 7 / 0,85 = <span class="val">~45 kVA peak</span>
+
+<span class="comment">→ IT UPS bu yükü kaldıramaz
+→ Motor toleranslı UPS zorunlu</span>
+        </div>
+
+        <div class="callout">
+          <div class="callout-title">⚠️ Önemli Uyarı</div>
+          <p>Bu sistemlerin UPS'siz çalıştırılması halinde bina işletmecisi idari para cezası ve olası kaza sonrası hukuki sorumlulukla karşı karşıya kalır. Yıllık yapı denetimleri bu sistemleri kapsamaktadır.</p>
+        </div>
+
+        <h3 id="toc-urun">Ürün Seçim Rehberi</h3>
+        <p>Projenizin kapasitesi, sektörü ve yedeklilik gereksinimine göre doğru ürün serisini belirlemek için uzman ekibimizden destek alabilirsiniz.</p>
+
+        <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="https://aytechteknoloji.com" target="_blank" class="btn btn-primary">Kurumsal Proje Teklifi Al →</a>
+          <a href="https://aytechelektromarket.com" target="_blank" class="btn btn-outline">Ürünleri İncele</a>
+        </div>
+
+      </div>
+
+      <div class="article-toc">
+        <div class="toc-title">📋 İçindekiler</div>
+        <ul class="toc-list">
+          <li><a href="#toc-yuk">Yük Hesabı ve Boyutlandırma</a></li>
+          <li class="sub"><a href="#toc-yuk-form">Formül ve Örnekler</a></li>
+          <li><a href="#toc-yedek">Yedeklilik Mimarileri</a></li>
+          <li class="sub"><a href="#toc-yedek">Tier I–IV Karşılaştırması</a></li>
+          <li><a href="#toc-pue">PUE: Enerji Verimliliği</a></li>
+          <li><a href="#toc-batarya">Batarya Teknolojileri</a></li>
+          <li class="sub"><a href="#toc-batarya">VRLA vs. Li-ion</a></li>
+          <li><a href="#toc-asansor">Asansör & Yangın Sistemleri</a></li>
+          <li class="sub"><a href="#toc-asansor">Yasal Zorunluluklar</a></li>
+          <li class="sub"><a href="#toc-motor">Motor Yükü Boyutlandırma</a></li>
+          <li><a href="#toc-urun">Ürün Seçim Rehberi</a></li>
+        </ul>
+
+        <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--border);">
+          <div style="font-size:12px;color:var(--text3);margin-bottom:12px;font-weight:600;">HIZLI TEKLİF</div>
+          <a href="https://aytechteknoloji.com" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;margin-bottom:8px;">Kurumsal Proje →</a>
+          <a href="https://aytechelektromarket.com" target="_blank" class="btn btn-outline" style="width:100%;justify-content:center;">Ürün Kataloğu</a>
+        </div>
+
+        <div style="margin-top:16px;background:var(--accent-light);border:1px solid rgba(212,68,12,0.15);border-radius:var(--radius);padding:14px;">
+          <div style="font-size:12px;font-weight:700;color:var(--accent);margin-bottom:6px;">🔴 Tunçmatik Ultra One</div>
+          <div style="font-size:12px;color:var(--text3);line-height:1.55;margin-bottom:10px;">10–200 kVA endüstriyel seri. Yerli üretim, hızlı servis ağı, enerji verimliliği sertifikası.</div>
+          <a href="https://aytechelektromarket.com" target="_blank" style="font-size:11.5px;color:var(--accent);font-weight:600;text-decoration:none;">Ürünleri İncele →</a>
+        </div>
+
+        <div style="margin-top:12px;background:var(--accent3-light);border:1px solid rgba(27,79,138,0.15);border-radius:var(--radius);padding:14px;">
+          <div style="font-size:12px;font-weight:700;color:var(--accent3);margin-bottom:6px;">🔵 APC by Schneider Electric</div>
+          <div style="font-size:12px;color:var(--text3);line-height:1.55;margin-bottom:10px;">Smart-UPS, Galaxy VS/VX — Kurumsal veri merkezi ve kritik altyapı standartı.</div>
+          <a href="https://schneiderups.com.tr" target="_blank" style="font-size:11.5px;color:var(--accent3);font-weight:600;text-decoration:none;">schneiderups.com.tr →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="blog" id="blog">
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;flex-wrap:wrap;gap:16px;">
+      <div>
+        <span class="section-label">Teknik Makaleler</span>
+        <h2 class="section-title" style="margin-bottom:0;">Mühendislik Rehberleri</h2>
+      </div>
+      <a href="#makaleler" class="btn btn-outline">Tüm Makaleler →</a>
+    </div>
+
+    <div class="blog-grid">
+      <div class="blog-main">
+
+        <div class="blog-card">
+          <div class="blog-card-img">
+            <div class="img-pattern"></div>
+            <span style="position:relative;z-index:1;">⚡</span>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-meta">
+              <span class="blog-tag" style="background:var(--accent-light);color:var(--accent);">Endüstriyel</span>
+              <span class="blog-date">Ocak 2025</span>
+            </div>
+            <h3>Voltaj Dalgalanmaları Endüstriyel Cihazlarınıza Nasıl Zarar Verir?</h3>
+            <p>Regülatör mü, Online UPS mi? CNC tezgahları, inverter sürücüler ve kombi elektronik kartları için şebeke kirliliğinin gerçek maliyeti ve doğru koruma çözümleri.</p>
+            <a href="#makale-voltaj" class="blog-read-more">Makaleyi Oku <span>→</span></a>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <div class="blog-card-img" style="background:linear-gradient(135deg,var(--accent3-light),var(--bg2));">
+            <div class="img-pattern"></div>
+            <span style="position:relative;z-index:1;">🖥️</span>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-meta">
+              <span class="blog-tag" style="background:var(--accent3-light);color:var(--accent3);">Veri Merkezi</span>
+              <span class="blog-date">Ocak 2025</span>
+            </div>
+            <h3>Veri Merkezi ve Sunucu Odaları İçin UPS Seçim Rehberi</h3>
+            <p>PUE hesabı, Tier standartları, N+1 yedeklilik mimarisi ve batarya teknolojileri. IT müdürleri için kapsamlı teknik kılavuz.</p>
+            <a href="#rehber" class="blog-read-more">Makaleyi Oku <span>→</span></a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="blog-sidebar">
+
+        <div class="sidebar-widget">
+          <div class="widget-title">Hızlı Erişim</div>
+          <a href="https://aytechelektromarket.com" target="_blank" class="quick-link">
+            <span class="quick-link-icon">⚡</span>
+            <div>
+              <div class="quick-link-text">Tunçmatik & APC by Schneider Electric Ürünleri</div>
+              <div class="quick-link-sub">aytechelektromarket.com</div>
+            </div>
+            <span class="quick-link-arrow">›</span>
+          </a>
+          <a href="https://schneiderups.com.tr" target="_blank" class="quick-link">
+            <span class="quick-link-icon">🔵</span>
+            <div>
+              <div class="quick-link-text">APC by Schneider Electric</div>
+              <div class="quick-link-sub">schneiderups.com.tr</div>
+            </div>
+            <span class="quick-link-arrow">›</span>
+          </a>
+          <a href="https://aytechteknoloji.com" target="_blank" class="quick-link">
+            <span class="quick-link-icon">📋</span>
+            <div>
+              <div class="quick-link-text">Kurumsal Proje Teklifi</div>
+              <div class="quick-link-sub">Yerinde keşif dahil — aytechteknoloji.com</div>
+            </div>
+            <span class="quick-link-arrow">›</span>
+          </a>
+          <a href="https://aytechelektromarket.com" target="_blank" class="quick-link">
+            <span class="quick-link-icon">🎮</span>
+            <div>
+              <div class="quick-link-text">Gaming & Home-Office UPS</div>
+              <div class="quick-link-sub">Pro3, Eco serileri — aytechelektromarket.com</div>
+            </div>
+            <span class="quick-link-arrow">›</span>
+          </a>
+        </div>
+
+        <div class="sidebar-widget" style="background:linear-gradient(160deg,var(--accent-light),var(--surface));border-color:rgba(212,68,12,0.2);">
+          <div style="font-size:24px;margin-bottom:10px;">🏆</div>
+          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:15px;color:var(--text);margin-bottom:6px;">Tunçmatik Ultra One</div>
+          <div style="font-size:13px;color:var(--text3);margin-bottom:6px;line-height:1.55;">Yerli üretim, 10–200 kVA endüstriyel güç. Türkiye şebekesine özel optimize.</div>
+          <div style="font-size:13px;color:var(--text3);margin-bottom:14px;line-height:1.55;">Geniş kapasite aralığında kesintisiz güç ve enerji verimliliği.</div>
+          <a href="https://aytechelektromarket.com" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;margin-bottom:8px;">Ürünleri İncele →</a>
+          <a href="https://aytechteknoloji.com" target="_blank" class="btn btn-outline" style="width:100%;justify-content:center;font-size:12px;">Kurumsal Proje Teklifi</a>
+        </div>
+
+        <div class="sidebar-widget" style="background:linear-gradient(160deg,var(--accent3-light),var(--surface));border-color:rgba(27,79,138,0.2);">
+          <div style="font-size:24px;margin-bottom:10px;">🔵</div>
+          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:15px;color:var(--text);margin-bottom:6px;">APC by Schneider Electric</div>
+          <div style="font-size:13px;color:var(--text3);margin-bottom:14px;line-height:1.55;">Smart-UPS, Galaxy VS/VX. Kurumsal veri merkezi ve kritik altyapı standardı.</div>
+          <a href="https://schneiderups.com.tr" target="_blank" class="btn btn-blue" style="width:100%;justify-content:center;margin-bottom:8px;">schneiderups.com.tr →</a>
+          <a href="https://aytechteknoloji.com" target="_blank" class="btn btn-outline" style="width:100%;justify-content:center;font-size:12px;">Kurumsal Proje Teklifi</a>
+        </div>
+
+        <div class="sidebar-widget">
+          <div class="widget-title">Popüler Konular</div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;">
+            <span style="background:var(--bg2);border:1px solid var(--border);padding:4px 10px;border-radius:100px;font-size:12px;color:var(--text3);">UPS Nedir?</span>
+            <span style="background:var(--bg2);border:1px solid var(--border);padding:4px 10px;border-radius:100px;font-size:12px;color:var(--text3);">kVA Hesabı</span>
+            <span style="background:var(--bg2);border:1px solid var(--border);padding:4px 10px;border-radius:100px;font-size:12px;color:var(--text3);">PUE Nedir?</span>
+            <span style="background:var(--bg2);border:1px solid var(--border);padding:4px 10px;border-radius:100px;font-size:12px;color:var(--text3);">Batarya Ömrü</span>
+            <span style="background:var(--bg2);border:1px solid var(--border);padding:4px 10px;border-radius:100px;font-size:12px;color:var(--text3);">Online UPS</span>
+            <span style="background:var(--bg2);border:1px solid var(--border);padding:4px 10px;border-radius:100px;font-size:12px;color:var(--text3);">3 Fazlı UPS</span>
+            <span style="background:var(--bg2);border:1px solid var(--border);padding:4px 10px;border-radius:100px;font-size:12px;color:var(--text3);">EN 50171</span>
+            <span style="background:var(--bg2);border:1px solid var(--border);padding:4px 10px;border-radius:100px;font-size:12px;color:var(--text3);">Regülatör vs UPS</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAKALE 1 -->
+<section id="makale-voltaj" style="background:var(--surface);border-top:1px solid var(--border);padding:72px 0;">
+  <div class="container">
+    <span class="section-label">Makale — Endüstriyel</span>
+    <h2 class="section-title">Voltaj Dalgalanmaları Endüstriyel Cihazlarınıza Nasıl Zarar Verir?</h2>
+    <p class="section-sub" style="margin-bottom:40px;">Regülatör mü, Online UPS mi? Şebeke kirliliğinin gerçek maliyeti ve doğru koruma çözümleri.</p>
+
+    <div class="pillar-grid">
+      <div class="article-content">
+        <h2>Şebeke Kirliliği Nedir?</h2>
+        <p>Türkiye şebekesinde endüstriyel bölgelerde voltaj dalgalanması son derece yaygındır. Nominal 230V'un (tek faz) gerçekte <strong>±%10 ile ±%20</strong> arasında sürekli dalgalandığı ölçülmektedir. Anlık yük değişimlerinde bu oran <strong>±%30'a</strong> kadar ulaşabilir.</p>
+
+        <h3>1. Voltaj Dalgalanması (Sag-Swell)</h3>
+        <p>Güç elektroniği devreler dar voltaj toleranslarında tasarlanır. Sürekli dalgalanma; kondansatörlerin ömrünü kısaltır, IGBT transistörlerde stres yaratır ve zamanla katastrofik arızaya yol açar.</p>
+
+        <h3>2. Harmonik Bozulma (THD)</h3>
+        <p>Harmonikler frekansın tam katlarında oluşan sinyal bozulmalarıdır. THDi %5'i aştığında transformatörler aşırı ısınır, güç kabloları normalden fazla ısı üretir ve güç faktörü düşer — bu doğrudan elektrik faturasına yansır.</p>
+
+        <h3>3. Mikro-Kesintiler (3ms–500ms)</h3>
+        <p>İnsan gözüyle fark edilmeyen bu kesintiler dijital kontrol sistemleri için felaket anlamına gelir. Saha örneği: 8ms süren bir mikro-kesinti 12 CNC makinesinin senkronizasyonunu bozmuş, 4 saatlik üretim kaybına neden olmuştur.</p>
+
+        <h2>Regülatör mü, Online UPS mi?</h2>
+        <table class="data-table">
+          <thead><tr><th>Tehdit</th><th>Regülatör (AVR)</th><th>Online UPS (VFI)</th></tr></thead>
+          <tbody>
+            <tr><td>Voltaj dalgalanması</td><td style="color:var(--green);font-weight:600;">✅ Korur</td><td style="color:var(--green);font-weight:600;">✅ Korur</td></tr>
+            <tr><td>Şebeke kesintisi</td><td style="color:#DC2626;font-weight:600;">❌ Korumaz</td><td style="color:var(--green);font-weight:600;">✅ Korur</td></tr>
+            <tr><td>Mikro-kesintiler</td><td style="color:#DC2626;font-weight:600;">❌ Korumaz</td><td style="color:var(--green);font-weight:600;">✅ Korur</td></tr>
+            <tr><td>Harmonik bozulma</td><td style="color:#DC2626;font-weight:600;">❌ Korumaz</td><td style="color:var(--green);font-weight:600;">✅ Korur</td></tr>
+            <tr><td>Gerilim tepeleri (spike)</td><td style="color:var(--gold);font-weight:600;">⚠️ Kısmen</td><td style="color:var(--green);font-weight:600;">✅ Korur</td></tr>
+            <tr><td>Frekans bozulması</td><td style="color:#DC2626;font-weight:600;">❌ Korumaz</td><td style="color:var(--green);font-weight:600;">✅ Korur</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Endüstriyel Tesisler İçin: Tunçmatik Online UPS</h2>
+        <p>Tunçmatik Ultra One (10–200 kVA, 3 faz) ve PowerUP serileri, Türkiye şebeke karakteristiğine özel geniş voltaj toleransı ve yüksek enerji verimliliğiyle endüstriyel üretim hattı koruması için tasarlanmıştır.</p>
+
+        <h3>Evdeki Sessiz Tehlike</h3>
+        <p>Kış aylarında kırsal ve villa bölgelerinde yaşanan voltaj çöküntüleri kombi elektronik kartlarını tahrip eder. Servislerin en sık gördüğü arıza budur. Keza yüksek performanslı bilgisayar güç kaynaklarına (PSU) gelen voltaj tepeleri ekran kartı ve anakart hasarı yaratır.</p>
+        <p>Tunçmatik Pro3 ve Eco serileri (1–3 kVA, tek faz), kompakt yapısıyla hem ev ofisi hem de gaming istasyonları için ideal koruma sağlar.</p>
+
+        <div class="callout green">
+          <div class="callout-title">💡 Mühendislik Sonucu</div>
+          <p>Değiştirmesi pahalı ve üretim hattı için kritik olan her ekipman Online UPS koruması altında olmalıdır. Endüstriyel elektronik arızalarının <strong>%34'ü</strong> şebeke kaynaklı enerji kalitesi sorunlarından kaynaklanmaktadır (IEEE Std 1346).</p>
+        </div>
+
+        <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="https://aytechelektromarket.com" target="_blank" class="btn btn-primary">Tunçmatik Ürünlerini İncele →</a>
+          <a href="https://aytechteknoloji.com" target="_blank" class="btn btn-outline">Proje Teklifi Al</a>
+        </div>
+      </div>
+
+      <div class="article-toc">
+        <div class="toc-title">📋 Bu Makalede</div>
+        <ul class="toc-list">
+          <li><a href="#makale-voltaj">Şebeke Kirliliği Nedir?</a></li>
+          <li class="sub"><a href="#makale-voltaj">Voltaj Dalgalanması</a></li>
+          <li class="sub"><a href="#makale-voltaj">Harmonik Bozulma</a></li>
+          <li class="sub"><a href="#makale-voltaj">Mikro-Kesintiler</a></li>
+          <li><a href="#makale-voltaj">Regülatör vs Online UPS</a></li>
+          <li><a href="#makale-voltaj">Endüstriyel Çözümler</a></li>
+          <li><a href="#makale-voltaj">Evdeki Sessiz Tehlike</a></li>
+        </ul>
+        <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border);">
+          <a href="https://aytechelektromarket.com" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;margin-bottom:8px;">Tunçmatik Ürünleri →</a>
+          <a href="https://aytechteknoloji.com" target="_blank" class="btn btn-outline" style="width:100%;justify-content:center;">Proje Teklifi</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="container">
+    <div class="cta-band-inner">
+      <div>
+        <h2>Tesisiniz İçin Doğru Çözümü Birlikte Bulalım</h2>
+        <p>Yerinde keşif, ücretsiz sistem boyutlandırma ve şartname hazırlama. Tunçmatik ve APC by Schneider Electric yetkili satıcısı olarak tek noktadan çözüm sunuyoruz.</p>
+      </div>
+      <div class="cta-band-actions">
+        <a href="https://aytechteknoloji.com" target="_blank" class="btn btn-white">Kurumsal Proje Teklifi →</a>
+        <a href="https://aytechelektromarket.com" target="_blank" class="btn btn-ghost">Ürün Kataloğu</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- İLETİŞİM -->
+<section id="iletisim" style="background:var(--bg2);border-top:1px solid var(--border);padding:72px 0;">
+  <div class="container">
+    <span class="section-label">İletişim</span>
+    <h2 class="section-title">Aytech Teknoloji İnovasyon Limited Şirketi</h2>
+    <p class="section-sub" style="margin-bottom:48px;">Tunçmatik ve APC by Schneider Electric yetkili satıcısı olarak; UPS sistemleri, EV şarj altyapısı ve endüstriyel güç çözümleri alanında hizmet veriyoruz.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;">
+
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;">
+        <div style="font-size:28px;margin-bottom:14px;">📍</div>
+        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--text);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.05em;">Adres</div>
+        <div style="font-size:14px;color:var(--text2);line-height:1.7;">Feyzullah Serap Cd. 10/A<br>34843 Maltepe / İstanbul</div>
+      </div>
+
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;">
+        <div style="font-size:28px;margin-bottom:14px;">📞</div>
+        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--text);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.05em;">Telefon & WhatsApp</div>
+        <a href="tel:+905058525331" style="display:block;font-size:16px;font-weight:700;color:var(--accent);text-decoration:none;margin-bottom:6px;">0(505) 852 53 31</a>
+        <a href="https://wa.me/905058525331" target="_blank" style="display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--green);font-weight:600;text-decoration:none;">
+          <span style="font-size:16px;">💬</span> WhatsApp ile Yaz
+        </a>
+      </div>
+
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;">
+        <div style="font-size:28px;margin-bottom:14px;">✉️</div>
+        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--text);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.05em;">E-posta</div>
+        <a href="/cdn-cgi/l/email-protection#620b0c040d22031b1607010a1607090c0d0e0d080b4c010d0f4c1610" style="display:block;font-size:14px;font-weight:600;color:var(--accent3);text-decoration:none;margin-bottom:10px;"><span class="__cf_email__" data-cfemail="0960676f664968707d6c6a617d6c62676665666360276a6664277d7b">[email&#160;protected]</span></a>
+        <div style="font-size:12px;color:var(--text4);line-height:1.5;">Teknik danışmanlık, proje teklifi ve<br>satın alma sorularınız için</div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;">
+        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--text);margin-bottom:16px;text-transform:uppercase;letter-spacing:0.05em;">Yetkili Satış Kanalları</div>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <a href="https://aytechelektromarket.com" target="_blank" style="display:flex;align-items:center;gap:12px;text-decoration:none;padding:10px 14px;background:var(--accent-light);border:1px solid rgba(212,68,12,0.2);border-radius:8px;">
+            <span style="font-size:18px;">⚡</span>
+            <div>
+              <div style="font-size:13px;font-weight:700;color:var(--accent);">aytechelektromarket.com</div>
+              <div style="font-size:12px;color:var(--text3);">Tunçmatik & APC ürün kataloğu</div>
+            </div>
+            <span style="margin-left:auto;color:var(--accent);font-weight:700;">›</span>
+          </a>
+          <a href="https://schneiderups.com.tr" target="_blank" style="display:flex;align-items:center;gap:12px;text-decoration:none;padding:10px 14px;background:var(--accent3-light);border:1px solid rgba(27,79,138,0.2);border-radius:8px;">
+            <span style="font-size:18px;">🔵</span>
+            <div>
+              <div style="font-size:13px;font-weight:700;color:var(--accent3);">schneiderups.com.tr</div>
+              <div style="font-size:12px;color:var(--text3);">APC by Schneider Electric ürünleri</div>
+            </div>
+            <span style="margin-left:auto;color:var(--accent3);font-weight:700;">›</span>
+          </a>
+          <a href="https://aytechteknoloji.com" target="_blank" style="display:flex;align-items:center;gap:12px;text-decoration:none;padding:10px 14px;background:var(--green-light);border:1px solid rgba(26,107,58,0.2);border-radius:8px;">
+            <span style="font-size:18px;">🏢</span>
+            <div>
+              <div style="font-size:13px;font-weight:700;color:var(--green);">aytechteknoloji.com</div>
+              <div style="font-size:12px;color:var(--text3);">Kurumsal proje ve danışmanlık</div>
+            </div>
+            <span style="margin-left:auto;color:var(--green);font-weight:700;">›</span>
+          </a>
+        </div>
+      </div>
+
+      <div style="background:linear-gradient(135deg,var(--text) 0%,#2C2926 100%);border-radius:var(--radius-lg);padding:28px;position:relative;overflow:hidden;">
+        <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(244,242,238,0.04) 1px, transparent 1px),linear-gradient(90deg,rgba(244,242,238,0.04) 1px,transparent 1px);background-size:32px 32px;"></div>
+        <div style="position:relative;">
+          <div style="font-size:28px;margin-bottom:14px;">💬</div>
+          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:#F0EDE8;margin-bottom:8px;">Hızlı Teklif İçin WhatsApp</div>
+          <div style="font-size:13.5px;color:rgba(240,237,232,0.65);margin-bottom:20px;line-height:1.6;">Proje ihtiyacınızı yazın, ekibimiz en kısa sürede size özel teklif hazırlasın.</div>
+          <a href="https://wa.me/905058525331?text=Merhaba,%20kesintisizguc.com%20üzerinden%20ulaşıyorum.%20UPS%20projesi%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="btn" style="background:#25D366;color:#fff;font-size:14px;padding:11px 22px;display:inline-flex;align-items:center;gap:8px;">
+            <span>💬</span> WhatsApp'tan Yaz → 0(505) 852 53 31
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <a href="#" class="logo" style="margin-bottom:12px;display:inline-flex;">
+          <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+          <div><span class="logo-text">KesintisizGüç</span><span class="logo-sub">.com</span></div>
+        </a>
+        <p>Mühendislik temelli, bağımsız endüstriyel enerji sürekliliği portalı. IEC, IEEE ve TSE standartları referanslı teknik içerikler.</p>
+        <div style="font-size:11px;color:var(--text4);font-family:'DM Mono',monospace;">Aytech Teknoloji İnovasyon Ltd. Şti. tarafından yönetilmektedir</div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Sektörler</div>
+        <ul class="footer-links">
+          <li><a href="#sektorler">Veri Merkezleri</a></li>
+          <li><a href="#sektorler">Endüstriyel Üretim</a></li>
+          <li><a href="#sektorler">Tıbbi Sistemler</a></li>
+          <li><a href="#sektorler">Asansör & Yangın</a></li>
+          <li><a href="#sektorler">Gaming & Home-Office</a></li>
+          <li><a href="#sektorler">Telekomünikasyon</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Teknik Kaynaklar</div>
+        <ul class="footer-links">
+          <li><a href="#rehber">UPS Seçim Rehberi</a></li>
+          <li><a href="#verimlilik">Enerji Tasarrufu Hesapla</a></li>
+          <li><a href="#toc-batarya">Batarya Ömrü</a></li>
+          <li><a href="#toc-pue">PUE Nedir?</a></li>
+          <li><a href="#toc-yedek">Tier Standartları</a></li>
+          <li><a href="#toc-asansor">Yasal Zorunluluklar</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Yetkili Satış & Proje</div>
+        <div class="footer-partner">
+          <div class="partner-dot" style="background:var(--accent);"></div>
+          <div>
+            <div style="font-size:13px;font-weight:600;color:var(--text2);">Tunçmatik Yetkili Satıcı</div>
+            <a href="https://aytechelektromarket.com" target="_blank" style="font-size:12px;color:var(--accent);text-decoration:none;">aytechelektromarket.com →</a>
+          </div>
+        </div>
+        <div class="footer-partner">
+          <div class="partner-dot" style="background:var(--accent3);"></div>
+          <div>
+            <div style="font-size:13px;font-weight:600;color:var(--text2);">APC by Schneider Electric Yetkili Satıcı</div>
+            <a href="https://schneiderups.com.tr" target="_blank" style="font-size:12px;color:var(--accent3);text-decoration:none;">schneiderups.com.tr →</a>
+          </div>
+        </div>
+        <div style="margin-top:16px;">
+          <a href="https://aytechteknoloji.com" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;margin-bottom:8px;">Proje Teklifi Al →</a>
+          <a href="https://wa.me/905058525331" target="_blank" class="btn" style="width:100%;justify-content:center;background:#25D366;color:#fff;font-size:12.5px;">💬 WhatsApp</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 KesintisizGuc.com — Tüm hakları saklıdır. <strong>Aytech Teknoloji İnovasyon Ltd. Şti.</strong> bünyesinde yönetilmektedir.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Gizlilik Politikası</a>
+        <a href="#">KVKK</a>
+        <a href="#iletisim">İletişim</a>
+        <a href="https://aytechelektromarket.com" target="_blank">Elektromarket</a>
+        <a href="https://schneiderups.com.tr" target="_blank">SchneiderUPS</a>
+        <a href="https://aytechteknoloji.com" target="_blank">Aytech</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<div class="float-help">
+  <div class="float-tooltip">Teklif & Danışmanlık — WhatsApp</div>
+  <a href="https://wa.me/905058525331?text=Merhaba,%20kesintisizguc.com%20üzerinden%20ulaşıyorum.%20UPS%20projesi%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="float-help-btn" style="background:#25D366;box-shadow:0 4px 20px rgba(37,211,102,0.4);" title="WhatsApp ile Yaz">
+    💬
+  </a>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── DARK MODE TOGGLE ──
+const toggle = document.getElementById('themeToggle');
+const html = document.documentElement;
+toggle.addEventListener('click', () => {
+  html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+});
+
+// ── TAB SWITCH ──
+function switchTab(id) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// ── ENERGY CALCULATOR ──
+function calcEnergy() {
+  const cap = +document.getElementById('capacity').value;
+  const effOld = +document.getElementById('eff-old').value / 100;
+  const effNew = +document.getElementById('eff-new').value / 100;
+  const price = +document.getElementById('price').value;
+  const pf = 0.85;
+  const hours = 8760;
+
+  document.getElementById('cap-val').textContent = cap + ' kVA';
+  document.getElementById('eff-old-val').textContent = '%' + Math.round(effOld*100);
+  document.getElementById('eff-new-val').textContent = '%' + Math.round(effNew*100);
+  document.getElementById('price-val').textContent = price.toFixed(1) + ' TL';
+
+  const lossOld = cap * pf * (1 - effOld);
+  const lossNew = cap * pf * (1 - effNew);
+  const costOld = lossOld * hours * price;
+  const costNew = lossNew * hours * price;
+  const save = costOld - costNew;
+
+  const fmt = v => v >= 1000 ? (v/1000).toFixed(0) + '.000 TL' : Math.round(v) + ' TL';
+  document.getElementById('r-old').textContent = fmt(costOld) + '/yıl';
+  document.getElementById('r-new').textContent = fmt(costNew) + '/yıl';
+  document.getElementById('r-save').textContent = '~' + fmt(save) + '/yıl';
+  document.getElementById('r-5y').textContent = '~' + fmt(save*5);
+}
+
+['capacity','eff-old','eff-new','price'].forEach(id => {
+  document.getElementById(id).addEventListener('input', calcEnergy);
+});
+calcEnergy();
+
+// ── SCROLL ACTIVE NAV ──
+const sections = document.querySelectorAll('section[id], div[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 100) current = s.id;
+  });
+  navLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href'
