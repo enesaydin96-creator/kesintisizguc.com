@@ -66,7 +66,7 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   font-family: 'DM Sans', sans-serif;
@@ -1059,20 +1059,58 @@ footer {
   .blog-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 768px) {
-  .container { padding: 0 20px; }
-  nav { padding: 0 20px; gap: 16px; }
+  .container { padding: 0 16px; }
+  .topbar { display: none; }
+  nav {
+    padding: 0 16px;
+    gap: 8px;
+    height: auto;
+    min-height: 58px;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    padding-bottom: 0;
+  }
+  .logo { flex-shrink: 0; }
   .nav-links { display: none; }
+  /* Masaüstü butonları nav'da gizle */
+  .nav-right .btn { display: none; }
+  .theme-toggle { width: 36px; height: 36px; }
+  /* Mobil alt buton şeridi */
+  .nav-mobile-bar {
+    display: flex !important;
+    width: 100%;
+    gap: 8px;
+    border-top: 1px solid var(--border);
+    padding: 8px 0 10px;
+    margin-top: 2px;
+  }
+  .nav-mobile-bar a {
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+    font-size: 12px !important;
+    padding: 8px 6px !important;
+  }
   .sectors-grid { grid-template-columns: 1fr; }
   .product-grid { grid-template-columns: 1fr; }
   .cta-band-inner { grid-template-columns: 1fr; }
+  .cta-band-actions { flex-direction: column; }
   .footer-grid { grid-template-columns: 1fr; }
   .hero-stats { flex-direction: column; }
   .hero-stat { border-right: none; border-bottom: 1px solid var(--border); }
   .hero-stat:last-child { border-bottom: none; }
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn { justify-content: center; }
   section { padding: 48px 0; }
-  .topbar-inner { flex-direction: column; gap: 4px; }
-  #iletisim .container > div[style*="grid-template-columns:1fr 1fr 1fr"] { display: flex !important; flex-direction: column; }
-  #iletisim .container > div[style*="grid-template-columns:1fr 1fr"] { display: flex !important; flex-direction: column; }
+  .eff-grid { grid-template-columns: 1fr; }
+  .blog-grid { grid-template-columns: 1fr; }
+  .pillar-grid { grid-template-columns: 1fr; }
+  .article-toc { position: static; }
+  .products-tabs { width: 100%; justify-content: stretch; }
+  .tab-btn { flex: 1; font-size: 12px; padding: 8px 6px; }
+}
+@media (min-width: 769px) {
+  .nav-mobile-bar { display: none !important; }
 }
 </style>
 </head>
@@ -1121,6 +1159,12 @@ footer {
       </button>
       <a href="https://aytechelektromarket.com" target="_blank" class="btn btn-outline" style="font-size:12.5px;">Elektromarket</a>
       <a href="https://aytechteknoloji.com" target="_blank" class="btn btn-primary" style="font-size:12.5px;">Kurumsal Teklif Al →</a>
+    </div>
+
+    <!-- MOBİL BUTON ŞERİDİ -->
+    <div class="nav-mobile-bar">
+      <a href="https://aytechelektromarket.com" target="_blank" class="btn btn-outline">Elektromarket</a>
+      <a href="https://aytechteknoloji.com" target="_blank" class="btn btn-primary">Kurumsal Teklif →</a>
     </div>
   </nav>
 </header>
