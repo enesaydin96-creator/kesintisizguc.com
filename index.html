@@ -1112,6 +1112,14 @@ footer {
 @media (min-width: 769px) {
   .nav-mobile-bar { display: none !important; }
 }
+
+/* İletişim bölümü mobil */
+@media (max-width: 768px) {
+  .contact-top-grid { grid-template-columns: 1fr !important; }
+  .contact-bottom-grid { grid-template-columns: 1fr !important; }
+  .article-toc { position: static; }
+  .article-toc .btn { font-size: 12px !important; }
+}
 </style>
 </head>
 <body>
@@ -2038,7 +2046,7 @@ PUE 3,0+ → Verimsiz, eski nesil</span>
     <h2 class="section-title">Aytech Teknoloji İnovasyon Limited Şirketi</h2>
     <p class="section-sub" style="margin-bottom:48px;">Tunçmatik ve APC by Schneider Electric yetkili satıcısı olarak; UPS sistemleri, EV şarj altyapısı ve endüstriyel güç çözümleri alanında hizmet veriyoruz.</p>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;" class="contact-top-grid">
 
       <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;">
         <div style="font-size:28px;margin-bottom:14px;">📍</div>
@@ -2058,13 +2066,13 @@ PUE 3,0+ → Verimsiz, eski nesil</span>
       <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;">
         <div style="font-size:28px;margin-bottom:14px;">✉️</div>
         <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--text);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.05em;">E-posta</div>
-        <a href="/cdn-cgi/l/email-protection#620b0c040d22031b1607010a1607090c0d0e0d080b4c010d0f4c1610" style="display:block;font-size:14px;font-weight:600;color:var(--accent3);text-decoration:none;margin-bottom:10px;"><span class="__cf_email__" data-cfemail="0960676f664968707d6c6a617d6c62676665666360276a6664277d7b">[email&#160;protected]</span></a>
+        <a href="mailto:info@aytechteknoloji.com.tr" style="display:block;font-size:14px;font-weight:600;color:var(--accent3);text-decoration:none;margin-bottom:10px;">info@aytechteknoloji.com.tr</a>
         <div style="font-size:12px;color:var(--text4);line-height:1.5;">Teknik danışmanlık, proje teklifi ve<br>satın alma sorularınız için</div>
       </div>
 
     </div>
 
-    <div style="margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+    <div style="margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:20px;" class="contact-bottom-grid">
 
       <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;">
         <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--text);margin-bottom:16px;text-transform:uppercase;letter-spacing:0.05em;">Yetkili Satış Kanalları</div>
@@ -2198,11 +2206,15 @@ PUE 3,0+ → Verimsiz, eski nesil</span>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── DARK MODE TOGGLE ──
-const toggle = document.getElementById('themeToggle');
-const html = document.documentElement;
-toggle.addEventListener('click', () => {
-  html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
-});
+function initTheme() {
+  const toggle = document.getElementById('themeToggle');
+  const html = document.documentElement;
+  if (!toggle) return;
+  toggle.addEventListener('click', () => {
+    const current = html.getAttribute('data-theme');
+    html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+  });
+}
 
 // ── TAB SWITCH ──
 function switchTab(id) {
@@ -2214,43 +2226,71 @@ function switchTab(id) {
 
 // ── ENERGY CALCULATOR ──
 function calcEnergy() {
-  const cap = +document.getElementById('capacity').value;
-  const effOld = +document.getElementById('eff-old').value / 100;
-  const effNew = +document.getElementById('eff-new').value / 100;
-  const price = +document.getElementById('price').value;
+  const capEl    = document.getElementById('capacity');
+  const effOldEl = document.getElementById('eff-old');
+  const effNewEl = document.getElementById('eff-new');
+  const priceEl  = document.getElementById('price');
+  if (!capEl) return;
+
+  const cap    = +capEl.value;
+  const effOld = +effOldEl.value / 100;
+  const effNew = +effNewEl.value / 100;
+  const price  = +priceEl.value;
   const pf = 0.85;
   const hours = 8760;
 
-  document.getElementById('cap-val').textContent = cap + ' kVA';
-  document.getElementById('eff-old-val').textContent = '%' + Math.round(effOld*100);
-  document.getElementById('eff-new-val').textContent = '%' + Math.round(effNew*100);
-  document.getElementById('price-val').textContent = price.toFixed(1) + ' TL';
+  document.getElementById('cap-val').textContent     = cap + ' kVA';
+  document.getElementById('eff-old-val').textContent = '%' + Math.round(effOld * 100);
+  document.getElementById('eff-new-val').textContent = '%' + Math.round(effNew * 100);
+  document.getElementById('price-val').textContent   = price.toFixed(1) + ' TL';
 
   const lossOld = cap * pf * (1 - effOld);
   const lossNew = cap * pf * (1 - effNew);
   const costOld = lossOld * hours * price;
   const costNew = lossNew * hours * price;
-  const save = costOld - costNew;
+  const save    = costOld - costNew;
 
-  const fmt = v => v >= 1000 ? (v/1000).toFixed(0) + '.000 TL' : Math.round(v) + ' TL';
-  document.getElementById('r-old').textContent = fmt(costOld) + '/yıl';
-  document.getElementById('r-new').textContent = fmt(costNew) + '/yıl';
+  const fmt = v => {
+    if (v >= 1000000) return (v/1000000).toFixed(1) + ' Milyon TL';
+    if (v >= 1000)    return Math.round(v/1000) + '.000 TL';
+    return Math.round(v) + ' TL';
+  };
+
+  document.getElementById('r-old').textContent  = fmt(costOld) + '/yıl';
+  document.getElementById('r-new').textContent  = fmt(costNew) + '/yıl';
   document.getElementById('r-save').textContent = '~' + fmt(save) + '/yıl';
-  document.getElementById('r-5y').textContent = '~' + fmt(save*5);
+  document.getElementById('r-5y').textContent   = '~' + fmt(save * 5);
 }
 
-['capacity','eff-old','eff-new','price'].forEach(id => {
-  document.getElementById(id).addEventListener('input', calcEnergy);
-});
-calcEnergy();
-
 // ── SCROLL ACTIVE NAV ──
-const sections = document.querySelectorAll('section[id], div[id]');
-const navLinks = document.querySelectorAll('.nav-links a');
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(s => {
-    if (window.scrollY >= s.offsetTop - 100) current = s.id;
+function initScrollNav() {
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 100) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
   });
-  navLinks.forEach(a => {
-    a.classList.toggle('active', a.getAttribute('href'
+}
+
+// ── HEADER SHADOW ──
+window.addEventListener('scroll', () => {
+  const h = document.querySelector('header');
+  if (h) h.style.boxShadow = window.scrollY > 10 ? 'var(--shadow)' : 'var(--shadow-sm)';
+});
+
+// ── INIT ON DOM READY ──
+document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
+  calcEnergy();
+  initScrollNav();
+  ['capacity','eff-old','eff-new','price'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('input', calcEnergy);
+  });
+});
+</script>
