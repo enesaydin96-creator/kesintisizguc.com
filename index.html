@@ -2075,7 +2075,7 @@ PUE 3,0+ → Verimsiz, eski nesil</span>
       <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;">
         <div style="font-size:28px;margin-bottom:14px;">✉️</div>
         <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--text);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.05em;">E-posta</div>
-        <a href="/cdn-cgi/l/email-protection#f59c9b939ab5948c8190969d81909e9b9a999a9f9cdb969a98db8187" style="display:block;font-size:14px;font-weight:600;color:var(--accent3);text-decoration:none;margin-bottom:10px;"><span class="__cf_email__" data-cfemail="5b32353d341b3a222f3e38332f3e3035343734313275383436752f29">[email&#160;protected]</span></a>
+        <a id="mail-link" style="display:block;font-size:14px;font-weight:600;color:var(--accent3);text-decoration:none;margin-bottom:10px;"></a>
         <div style="font-size:12px;color:var(--text4);line-height:1.5;">Teknik danışmanlık, proje teklifi ve<br>satın alma sorularınız için</div>
       </div>
 
@@ -2213,7 +2213,7 @@ PUE 3,0+ → Verimsiz, eski nesil</span>
   </a>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 // ── DARK MODE TOGGLE ──
 function initTheme() {
   const toggle = document.getElementById('themeToggle');
@@ -2293,4 +2293,22 @@ window.addEventListener('scroll', () => {
 });
 
 // ── INIT ON DOM READY ──
-document.addEventList
+document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
+  calcEnergy();
+  initScrollNav();
+  ['capacity','eff-old','eff-new','price'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('input', calcEnergy);
+  });
+  // E-posta Cloudflare encode koruması
+  const m = document.getElementById('mail-link');
+  if (m) {
+    const u = 'info', d = 'aytechteknoloji.com.tr';
+    m.href = 'mailto:' + u + '@' + d;
+    m.textContent = u + '@' + d;
+  }
+});
+</script>
+</body>
+</html>
